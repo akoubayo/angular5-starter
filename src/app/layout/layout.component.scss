@@ -1,0 +1,119 @@
+@import "./../../styles.scss";
+
+.menu {
+  height:100vh;
+  background-color: #292B33
+}
+
+.body_main {
+  background-color: white;
+  height:100%;
+  min-height: 1000px;
+  margin: 0;
+  padding-top:75px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.menu_header {
+  background-color:mat-color($angular-primary-color);
+  margin: 0;padding:20px 0 0 0px;height: 100px;
+  color: rgba(255, 255, 255, 1);
+  width: 100%;
+  text-align: center;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+.header__toggle {
+    background-color: grey;
+    color: black;
+    position: absolute!important;
+    z-index: 999999998;
+    left: 25px;
+    top:18px;
+    background: transparent;
+    border: 0.15rem solid white;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    font-size: 0;
+    height: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    width: 2rem;
+    @include transition(left 0.3s);
+    @include respond-to(handhelds) {
+      left: 140px;
+      top:22px;
+      width: 1.2rem;
+      height: 0.8rem;
+    }
+    @include respond-to(medium-screens) {
+      left: 155px;
+      top:22px;
+      width: 1.5rem;
+    }
+    @include respond-to(wide-screens) {
+
+    }
+    &::after {
+      background: white;
+      content: '';
+      height: 0.15rem;
+      left: 0;
+      margin-top: -0.075rem;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      @include respond-to(handhelds) {
+        height: 0.10rem;
+        margin-top: -0.058rem;
+      }
+    }
+
+  }
+.test {
+  left: 25px;
+}
+
+.photo {
+  border: 3px solid white;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  position: relative;
+  top:-33px;
+  left: 31%;
+  margin-bottom: 0px;
+}
+
+.name_menu {
+  margin-top: -27px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+}
+
+.hr_menu {
+  background-color: #212121!important;
+  border-bottom: solid 1px #404040;
+  height: 1px!important;
+  width: 100%;
+  margin: -5px auto 0 auto;
+}
+
+.header {
+   background-color: #212121!important;
+   height: 55px;
+   color: white;
+   padding-left: 95px;
+   line-height: 45px;
+   position: absolute;
+   z-index: 1;
+   width: 100%
+}

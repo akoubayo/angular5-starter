@@ -1,0 +1,102 @@
+@import '~@angular/material/theming';
+@import '~./../../../styles.scss';
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+$break-small: 412px;
+$break-large: 1024px;
+
+
+
+#card-connexion {
+  padding: 0px;
+}
+
+#title-connexion{
+  color: white;
+  font-size: 16px;
+  line-height: 32px;
+  padding-top: 10px;
+  padding-left: 20px;
+  @include respond-to(handhelds) {font-size: 16px;}
+  @include respond-to(medium-screens) { font-size: 16px; }
+  @include respond-to(wide-screens) {
+    font-size: 20px;
+   }
+}
+
+#btn-subscribe {
+  font-size: 16px;
+  line-height: 32px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login_body {
+  height: 1000px;
+}
+
+#logo {
+  padding-top: 5%
+}
+
+#link_on_right {
+  float: right;
+  color: black;
+  margin-right: 5%;
+  font-size: 12px;
+}
+
+#body_form {
+  background-color: white;
+  padding:20px 0;
+  @include respond-to(handhelds) {font-size: 12px;}
+  @include respond-to(medium-screens) { font-size: 14px; }
+  @include respond-to(wide-screens) {
+    font-size: 14px;
+   }
+}
+
+
+.btn_oauth {
+  color: white;
+  width: 90%;
+  margin-left: 5%;
+  text-align: left;
+  margin-bottom:5px;
+  @include respond-to(handhelds) {font-size: 12px;}
+  @include respond-to(medium-screens) {
+    font-size: 14px;
+    height: 30px
+  }
+  @include respond-to(wide-screens) {
+    font-size: 14px;
+    height: 35px
+   }
+}
+
+.btn_salesforce {
+  background-color: #0092D6;
+}
+
+.btn_google {
+  background-color: #D63B30;
+}
+
+.btn_linkedin {
+  background-color: #0B6BAB
+}
+
+.btn_microsoft {
+  background-color: #00A5ED
+}

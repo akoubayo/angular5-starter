@@ -1,0 +1,75 @@
+<div class="container-fluid login_body">
+  <div class="row">
+    <div class="col-12">
+        <div class="col-12">
+          <div class="float-right"> FR | EN | DE | ES</div>
+          <div class="col-12 text_center" id="logo">
+            <!-- <img src="assets/img/logo-horizontal-transparent-large.png"/> -->
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3 padding_top_10">
+      <div class="color_primary row mat-elevation-z5">
+        <div class="col-6 col-md-6" id="title-connexion">
+          Connexion
+        </div>
+        <div class="col-6 col-md-6 button-row" style="text-align: right;">
+          <button mat-raised-button id="btn-subscribe">
+            S'inscrire
+          </button>
+        </div>
+      </div>
+      <div class="row  mat-elevation-z5">
+        <div class="col-12 col-md-6" id="body_form">
+          <form class="col-12" #formConnexion="ngForm" (ngSubmit)="submit()">
+            <mat-form-field class="col-sm-12">
+              <input matInput
+                placeholder="Email"
+                [(ngModel)]="connexion.username"
+                name="username"
+                type="text"
+              >
+            </mat-form-field>
+            <mat-form-field class="col-sm-12">
+              <input  matInput
+                      placeholder="Password"
+                      [(ngModel)]="connexion.password"
+                      name="password"
+                      type="password"
+              />
+            </mat-form-field>
+            <button mat-button class="col-xs-12 col-md-12 btn_primary" type='submit'>
+              Connexion
+            </button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6" id="body_form">
+          <div class="row">
+              <div class="col-12">
+                <button class="btn_oauth btn_salesforce">
+                   | Connexion avec Salesforce
+                </button>
+              </div>
+              <div class="col-12">
+                <button class="btn_oauth btn_google">
+                   | Connexion avec Google
+                </button>
+              </div>
+              <div class="col-12">
+                <button class="btn_oauth btn_linkedin">
+                   | Connexion avec Linkedin
+                </button>
+              </div>
+              <div class="col-12">
+                <button class="btn_oauth btn_microsoft">
+                   | Connexion avec Microsoft
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

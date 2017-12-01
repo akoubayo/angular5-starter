@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$angular-primary-color: mat-palette($mat-amber, 900);
+$angular-accent-color:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-warm-color:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$angular-theme-color: mat-light-theme($angular-primary-color, $angular-accent-color, $angular-warm-color);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($angular-theme-color);
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+$break-small: 412px;
+$break-large: 1024px;
+
+
+
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+$break-small: 412px;
+$break-large: 1024px;
+
+.text_center {
+  text-align: center;
+}
+
+.padding_top_15 {
+  padding-top: 15%;
+}
+
+.padding_top_10 {
+  padding-top: 10%;
+}
+
+.btn_primary {
+  color: white;
+  background-color: mat-color($angular-primary-color);
+  @include respond-to(handhelds) { height: 30px;}
+  @include respond-to(medium-screens) { height: 45px; }
+  @include respond-to(wide-screens) {
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+.float-right {
+  float: right;
+  color: white;
+  display: inline-block;
+}
+
+body {
+  @include respond-to(handhelds) {font-size: 12px;}
+  @include respond-to(medium-screens) { font-size: 14px; }
+  @include respond-to(wide-screens) {
+    font-size: 16px;
+   }
+}
+
+
+.color_primary {
+ background-color: mat-color($angular-primary-color);
+}
+
+aside {
+
+  box-shadow: 3px 0px 5px -1px rgba(0, 0, 0, 0.2),
+              1px 0px 14px 0px rgba(0, 0, 0, 0.14),
+              3px 0px 14px 1px rgba(0, 0, 0, 0.14);
+  width: 230px;
+}
